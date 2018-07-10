@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "npm run setup:install && npm run setup:db",
+    "setup:install": "npm install",
+    "setup:db": "npm run db:migrate && npm run db:seed",
+    "db:migrate": "./node_modules/.bin/sequelize db:migrate",
+    "db:seed": "./node_modules/.bin/sequelize db:seed:all",
     "start": "nodemon --exec babel-node index.js"
   },
   "repository": {
@@ -22,11 +27,16 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
+    "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-tools": "^3.0.5",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "pg": "^7.4.3",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

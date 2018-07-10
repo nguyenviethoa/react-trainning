@@ -1,0 +1,31 @@
+{
+  "development": {
+    "host": "http://localhost",
+    "port": 8003,
+    "secret": "super-secret-key-crate-api",
+    "saltRounds": 10,
+    "graphql": {
+      "endpoint": "/",
+      "ide": true,
+      "pretty": true
+    },
+    "upload": {
+      "endpoint": "/upload"
+    }
+  },
+  "production": {
+    "host": "27.78.16.8",
+    "port": 8000,
+    "secret": "super-secret-key-crate-api",
+    "saltRounds": 10,
+    "graphql": {
+      "endpoint": "/",
+      "ide": true,
+      "pretty": true
+    },
+    "upload": {
+      "endpoint": "/upload"
+    }
+  }
+  
+}

@@ -1,0 +1,20 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "closedeal",
+    "database": "hrmanagement",
+    "host": "27.78.16.8",
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "port": "8083"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "closedeal",
+    "database": "hrmanagement",
+    "host": "27.78.16.8",
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "port": "8083"
+  }
+}
