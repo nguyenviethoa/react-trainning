@@ -35,7 +35,12 @@ Object.keys(models).forEach(modelName => {
 });
 
 const models        = {
-  user: connection.import('./users')
+  User: connection.import('./users'),
+  Company: connection.import('./companies'),
+  Post: connection.import('./posts'),
+  Comment: connection.import('./comments'),
+  Attendance: connection.import('./attendances')
+
 };
 
 models.sequelize = connection;
