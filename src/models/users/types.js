@@ -3,6 +3,7 @@ import Base from '../base';
 const UserType = `
   extend type Query {
     getUserById(id: Int): UserType, 
+    getAllUsers: [UserType]
   }
 
   extend type Mutation {

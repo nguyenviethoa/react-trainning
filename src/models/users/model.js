@@ -10,6 +10,12 @@ export default (sequelize, DataTypes) => {
     },
     password: {
       type: DataTypes.STRING
+    },
+    role: {
+      type: DataTypes.STRING
+    },
+    confirmed: {
+      type: DataTypes.BOOLEAN
     }
   });
 
