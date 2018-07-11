@@ -14,9 +14,9 @@ export default (sequelize, DataTypes) => {
   });
 
   User.associate = (models) => {
-    User.belongsToMany(models.Company, { 
-      through: { 'comments',
-      foreignKey: 'postId'
+    User.belongsToMany(models.Post, { 
+      through: 'comments',
+      foreignKey: 'userId'
     });
     
     User.hasMany(models.Attendance);

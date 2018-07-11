@@ -8,9 +8,8 @@ export default (sequelize, DataTypes) => {
 
   Post.associate = (models) => {
     Post.belongsToMany(models.User, { 
-        through: { 'comments',
-        foreignKey: 'postId'
-      }
+      through: 'comments',
+      foreignKey: 'postId'
     });
   };
 

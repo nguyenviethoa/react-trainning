@@ -28,20 +28,20 @@ connection
     console.error('ERROR - Unable to connect to the database:', err);
   });
 
+const models        = {
+  User: connection.import('./users/model'),
+  Company: connection.import('./companies/model'),
+  Comment: connection.import('./comments/model'),
+  Post: connection.import('./posts/model'),
+  Attendance: connection.import('./attendances/model')
+
+};
+
 Object.keys(models).forEach(modelName => {
   if (models[modelName].associate) {
     models[modelName].associate(models);
   }
 });
-
-const models        = {
-  User: connection.import('./users'),
-  Company: connection.import('./companies'),
-  Post: connection.import('./posts'),
-  Comment: connection.import('./comments'),
-  Attendance: connection.import('./attendances')
-
-};
 
 models.sequelize = connection;
 models.Sequelize = Sequelize;

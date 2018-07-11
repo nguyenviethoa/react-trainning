@@ -7,6 +7,7 @@ import typeDefs from './schema/schema';
 import resolvers from './schema/resolvers';
 import models from './models';
 
+console.log('resolvers', resolvers);
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers
