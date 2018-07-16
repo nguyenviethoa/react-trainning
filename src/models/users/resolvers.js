@@ -35,11 +35,25 @@ const Mutation = {
   createUser: async (_, { username, email, password, companyId, role}) => {
     logger.info('start signup', username)
     if (password.length < 5 || password.length > 100) {
-      throw new Error('The password needs to be between 5 and 100 characters long');
+      return {
+        user: { username, email, password, companyId, role },
+        ok: false,
+        usernameError: '',
+        passwordError: 'The password needs to be between 5 and 100 characters long',
+        emailError: ''
+      }
+      // throw new Error('The password needs to be between 5 and 100 characters long');
     }
 
     const passwordHashed = await bcrypt.hash(password, configEnv.saltRounds)
-    return await models.User.create({ username, email, password: passwordHashed, companyId, role });
+    const user = await models.User.create({ username, email, password: passwordHashed, companyId, role });
+    return {
+      user,
+      ok: true,
+      usernameError: '',
+      passwordError: '',
+      emailError: ''
+    }
   },
 
   removeUser: async (_, { id }, ctx) => {

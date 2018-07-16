@@ -7,7 +7,7 @@ const UserType = `
   }
 
   extend type Mutation {
-    createUser(username: String!, email: String!, password: String!, companyId: Int!, role: String): UserType,
+    createUser(username: String!, email: String!, password: String!, companyId: Int!, role: String): UserSignupType,
     removeUser(id: Int!): UserType
   }
 
@@ -20,7 +20,16 @@ const UserType = `
     createAt: String
     updateAt: String
   }
-
 `;
 
-export default () => [ Base, UserType ];
+const UserSignupType = `
+  type UserSignupType {
+    user: UserType,
+    ok: Boolean,
+    usernameError: String,
+    passwordError: String,
+    emailError: String
+  }
+`;
+
+export default () => [ Base, UserType, UserSignupType ];
