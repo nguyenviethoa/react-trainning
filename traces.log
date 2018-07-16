@@ -1,0 +1,14 @@
+[2018-07-16T15:29:52.609] [INFO] traces - server start
+[2018-07-16T15:30:30.692] [INFO] traces - server start
+[2018-07-16T15:32:04.111] [INFO] traces - test user@crate.com
+[2018-07-16T15:38:11.080] [INFO] traces - server start
+[2018-07-16T15:39:14.258] [INFO] traces - server start
+[2018-07-16T15:39:40.229] [INFO] traces - start signup user@crate.com
+[2018-07-16T15:39:48.660] [INFO] traces - start signup dd
+[2018-07-16T15:46:59.073] [INFO] traces - start signup ddd
+[2018-07-16T15:54:35.128] [INFO] traces - start signup ddd
+[2018-07-16T15:55:18.281] [INFO] traces - start signup correctuser
+[2018-07-16T15:55:57.308] [INFO] traces - start signup user test 3
+[2018-07-16T15:56:12.003] [INFO] traces - start signup user test 3
+[2018-07-16T15:57:38.685] [INFO] traces - server start
+[2018-07-16T15:57:51.379] [INFO] traces - start signup sds

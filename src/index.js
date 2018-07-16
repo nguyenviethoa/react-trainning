@@ -3,12 +3,23 @@ import bodyParser from 'body-parser';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 import cors from 'cors';
+import log4js from 'log4js';
 
 import typeDefs from './schema/schema';
 import resolvers from './schema/resolvers';
 import models from './models';
+//////////////////////////////////////////////////////////////////
 
-console.log('resolvers', resolvers);
+log4js.configure({
+  appenders: { traces: { type: 'file', filename: 'traces.log' } },
+  categories: { default: { appenders: ['traces'], level: 'debug' } }
+});
+var logger = log4js.getLogger('traces');
+
+logger.info('server start');
+
+////////////////////////////////////////////////////////////////////
+
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers
